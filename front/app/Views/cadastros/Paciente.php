@@ -12,15 +12,32 @@
                 </div>                
             </div>
             <div class="form-row">
-                <div class="form-group col-md-5">
+                <div class="form-group col-md-3">
                     <label for="data">Data de Nasc.</label>
                     <input type="date" class="form-control" id="data" name="data" placeholder="Data de Nasc.">
                 </div>
-                <div class="form-group col-md-7">
+                <div class="form-group col-md-4">
                     <label for="cpf">CPF</label>
                     <input type="number" class="form-control" id="cpf" name="cpf" placeholder="CPF">
-                </div>                    
-            </div>                
+                </div> 
+                <div class="form-group col-md-5">
+                    <label for="convenio">Tipo de Convênio</label>
+                    <select id="convenio" name="convenio" class="form-control">
+                        <option value="sus">SUS</option>
+                        <option value="particular">Particular</option>
+                    </select>
+                </div>                   
+            </div>   
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone">
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="dataColetaExame">E-mail</label>
+                    <input type="email" class="form-control" id="dataColetaExame" name="dataColetaExame" placeholder="E-mail">
+                </div>
+            </div>                 
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label for="cep">CEP</label>
@@ -80,20 +97,6 @@
                         <option value="SE">Sergipe</option>
                         <option value="TO">Tocantins</option>
                     </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label for="dataInicioSintomas">Data de Início dos Sintomas</label>
-                    <input type="date" class="form-control" id="dataInicioSintomas" name="dataInicioSintomas" placeholder="Data de Início dos Sintomas">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="dataColetaExame">Data da Coleta do Exame</label>
-                    <input type="date" class="form-control" id="dataColetaExame" name="dataColetaExame" placeholder="Data da Coleta do Exame">
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="dataObito">Óbito </label>
-                    <input type="date" class="form-control" id="dataObito" name="dataObito" placeholder="Óbito">
                 </div>
             </div>
             <div class="form-row">
