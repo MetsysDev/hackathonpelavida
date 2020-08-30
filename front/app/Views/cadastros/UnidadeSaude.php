@@ -1,5 +1,5 @@
-<div id="container-acompanhamento">
-    <div class="content-acompanhmento" align="center">
+<div id="content-wrapper" class="d-flex flex-column">
+    <div class="content-unidadeSaude">
         <form method="POST" class="form" id="cadastroUnidadeSaude">
             <div class="form-row">
                 <div class="form-group col-md-12">

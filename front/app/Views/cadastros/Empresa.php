@@ -1,5 +1,5 @@
 <div id="container-acompanhamento">
-    <div class="content-acompanhmento" align="center">
+    <div class="content-empresa">
         <form method="POST" class="form" id="cadastroEmpresa">
             <div class="form-row">
                 <div class="form-group col-md-4">

@@ -1,5 +1,4 @@
-
-<div id="container-acompanhamento">
+<div id="content-wrapper" class="d-flex flex-column">
     <div class="content-acompanhmento" align="center">
         <form method="POST" class="form" id="formularioAcompanhamento">
             <div class="form-row">
