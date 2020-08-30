@@ -4,6 +4,6 @@ class Usuario extends BaseController
 {
 	public function index()
 	{
-		return view('cadastros/Usuario');
+		$this->template('cadastros/usuario');
 	}
 }

@@ -4,6 +4,6 @@ class Empresa extends BaseController
 {
 	public function index()
 	{
-		return view('cadastros/empresa');
+		$this->template('cadastros/empresa');
 	}
 }

@@ -4,6 +4,6 @@ class Unidadesaude extends BaseController
 {
 	public function index()
 	{
-		return view('cadastros/unidadesaude');
+		$this->template('cadastros/unidadesaude');
 	}
 }

@@ -4,6 +4,6 @@ class Login extends BaseController
 {
 	public function index()
 	{
-		return view('login/login');
+		$this->template('login/login');
 	}
 }
