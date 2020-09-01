@@ -4,6 +4,10 @@ class Acompanhamento extends BaseController
 {
 	public function index()
 	{
-		$this->template('cadastros/acompanhamento');
+		$js = array(
+            "assets/js/cadastro/acompanhameto.js"
+		);
+		
+		$this->template('cadastros/acompanhamento', array('js' => $js));
 	}
 }

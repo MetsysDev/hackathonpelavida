@@ -4,6 +4,10 @@ class Paciente extends BaseController
 {
 	public function index()
 	{
-		$this->template('cadastros/paciente');
+		$js = array(
+            "assets/js/cadastro/paciente.js"
+		);
+
+		$this->template('cadastros/paciente', array('js' => $js));
 	}
 }

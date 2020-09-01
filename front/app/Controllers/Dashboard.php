@@ -4,6 +4,10 @@ class Dashboard extends BaseController
 {
 	public function index()
 	{
-		$this->template('dashboard/dashboard');
+		$js = array(
+            "assets/js/dashboard/sb-admin-2.min.js"
+		);
+
+		$this->template('dashboard/dashboard', array('js'=>$js));
 	}
 }

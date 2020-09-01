@@ -1,20 +1,23 @@
         </div>
+         <!-- End of Content Wrapper -->
+        </div>
         <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-        </a>
         
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
         <!--JS Default -->
-        <script src="<?= base_url("assets/dashboard/js/sb-admin-2.min.js") ?>"></script>
-        <script src="<?= base_url("assets/commun/main.js") ?>"></script>
-        <script src="<?= base_url("assets/cadastro/unidadeSaude/main.js") ?>"></script>
+        <script src="<?= base_url("assets/js/commun/main.js") ?>"></script>
+        <script src="<?= base_url("assets/js/dashboard/sb-admin-2.js") ?>"></script>
+
+        <!--JS da view -->
+        <?php if(isset($js)): ?>
+        <?php foreach ($js as $key => $js) : ?>
+            <script src="<?= base_url($js) ?>"></script>
+        <?php endforeach ?> 
+        <?php endif ?>
 
     </body>
 </html>
