@@ -1,5 +1,6 @@
 <?php
 
+date_default_timezone_set("America/Sao_Paulo");
 function send($statusCode = 200, $data = null, $message = null, $tag = null)
 {
     $statusTexts = array(
@@ -131,4 +132,26 @@ function existeCampoEValor($camposObrigatorios, $dadosValidar)
     }
 
     return true;
+}
+function formataDataUtcParaDatetime($dataUtc, $timezone = 'America/Sao_Paulo', $toFormat = 'd/m/Y H:i:s', $fromFormat = 'Y-m-d H:i:s')
+{
+    if ($dataUtc && is_numeric($dataUtc) && (int)$dataUtc > 0) { //TIMESTAMP
+        $data = DateTime::createFromFormat('U', $dataUtc, new DateTimeZone('UTC'));
+    } elseif ($dataUtc && is_string($dataUtc) && strlen($dataUtc) > 0) {
+        $data = DateTime::createFromFormat($fromFormat, $dataUtc, new DateTimeZone('America/Sao_Paulo'));
+    } elseif ($dataUtc instanceof DateTime) {
+        $data = $dataUtc;
+    } else {
+        $data = false;
+    }
+    print_r($data);
+    if ($data) {
+        $data->setTimeZone(new DateTimeZone($timezone));
+        if ($toFormat) {
+            return $data->format($toFormat);
+        } else {
+            return $data;
+        }
+    }
+    return false;
 }

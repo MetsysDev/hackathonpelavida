@@ -117,6 +117,7 @@ class Controller
 		$this->request  = $request;
 		$this->response = $response;
 		$this->logger   = $logger;
+		helper('common_helper');
 
 		if ($this->forceHTTPS > 0)
 		{
