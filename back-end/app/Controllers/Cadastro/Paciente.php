@@ -14,9 +14,9 @@ class Paciente extends Controller
 		$this->PacienteModel->cadastrar(getContents());
 	}
 
-	public function getPacientes()
+	public function informacao()
 	{
-		$this->PacienteModel->getPacientes(getContents());
+		$this->PacienteModel->informacao(getContents());
 	}
 
 }

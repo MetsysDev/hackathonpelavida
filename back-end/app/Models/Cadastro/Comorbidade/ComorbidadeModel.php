@@ -12,7 +12,7 @@ class ComorbidadeModel extends MY_Model {
         send(200, array("id"=> $this->db->insertID()));
     }
 
-    public function getComorbidades($dados)
+    public function listar($dados)
     {
         $build = $this->db->table('metsys.comorbidade');
         print_r($dados['id']);
@@ -21,6 +21,11 @@ class ComorbidadeModel extends MY_Model {
         }
         $comorbidades = $build->get()->getResultArray();
         send(200, $comorbidades);
+    }
+
+    public function FunctionName($params)
+    {
+        # code...
     }
 
 }

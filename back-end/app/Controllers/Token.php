@@ -1,6 +1,8 @@
 <?php namespace App\Controllers;
 
-class Usuario extends BaseController
+use CodeIgniter\Controller;
+
+class Usuario extends Controller
 {
 	public function index()
 	{

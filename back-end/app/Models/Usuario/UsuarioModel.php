@@ -6,14 +6,17 @@ class UsuarioModel extends MY_Model {
 
     public function login($params, $validarExistente = false)
     {
-        //    ->select('US.usu_id_empresa, US.usu_id_unidade_saude, US.usu_max, US.usu_admin')
-                  $db = $this->db->table('metsys.usuario AS US');
-                  $db->join('metsys.empresa AS EM', 'EM.emp_id = US.usu_id_empresa');
-                  $db->where('US.usu_login', $params['usu_login']);
-                  if (!$validarExistente) {
-                      $db->where('US.usu_senha', md5($params['usu_senha']));
-                  }
-                  $db->where('EM.emp_status_ativo', 1);
+        $db = $this->db->table('metsys.usuario AS US');
+        $db->select('
+            US.usu_id_empresa, US.usu_id_unidade_saude,
+            US.usu_max, US.usu_admin,usu_nome
+        ');
+        $db->join('metsys.empresa AS EM', 'EM.emp_id = US.usu_id_empresa');
+        $db->where('US.usu_login', $params['usu_login']);
+        if (!$validarExistente) { // CASO SEJA FALSO ELE BUSCA O USUARIO COM SENHA
+            $db->where('US.usu_senha', md5($params['usu_senha']));
+        }
+        $db->where('EM.emp_status_ativo', 1);
         $result = $db->get()->getResultArray();        
 
         if (count($result)) {
@@ -40,7 +43,9 @@ class UsuarioModel extends MY_Model {
             send(400, null, 'Sem nome de usuario ou login ou senha');
         }
 
-        $novoUsuario = array_map(function($value){
+        /* FUNÇÃO PARA DEVOLVER UM NOVO ARRAY
+        COM OS VALORES ESPERADOS PARA A TABELA USUARIO */
+        $formataArray = function($value){
             return array(
                 'usu_nome' => $value['usu_nome'],
                 'usu_login' => $value['usu_login'],
@@ -48,7 +53,9 @@ class UsuarioModel extends MY_Model {
                 'usu_id_empresa' => $value['usu_id_empresa'],
                 'usu_id_unidade_saude' => $value['usu_id_unidade_saude']
             );
-        }, [$params]);
+        };
+
+        $novoUsuario = array_map($formataArray, [$params]);
 
         if (!$this->login($novoUsuario[0], true)) {
             $this->db->table('metsys.usuario')->insertBatch($novoUsuario);
