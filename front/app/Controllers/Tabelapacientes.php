@@ -8,6 +8,6 @@ class Tabelapacientes extends BaseController
             "assets/js/tabelas/pacientes.js",
         );
 
-		$this->template('tabelas/pacientes', array('js' => $js));
+		return $this->template('tabelas/Pacientes', array('js' => $js));
 	}
 }

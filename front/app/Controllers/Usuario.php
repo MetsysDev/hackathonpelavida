@@ -8,6 +8,6 @@ class Usuario extends BaseController
             "assets/js/cadastro/usuario.js"
 		);
 
-		$this->template('cadastros/usuario', array('js' => $js));
+		return $this->template('cadastros/Usuario', array('js' => $js));
 	}
 }

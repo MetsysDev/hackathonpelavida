@@ -45,6 +45,10 @@ class BaseController extends Controller
 
 	public function template(string $page, $dados=[])
     {
+		$session = session();
+		if (is_null($session->get('login'))) {
+			return redirect()->to(base_url('/'));
+		}
 		echo view('templates/header', $dados);
         echo view($page);
         echo view('templates/footer', $dados);

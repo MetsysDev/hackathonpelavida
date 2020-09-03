@@ -8,6 +8,6 @@ class Dashboard extends BaseController
             "assets/js/dashboard/sb-admin-2.min.js"
 		);
 
-		$this->template('dashboard/dashboard', array('js'=>$js));
+		return $this->template('dashboard/dashboard', array('js'=>$js));
 	}
 }

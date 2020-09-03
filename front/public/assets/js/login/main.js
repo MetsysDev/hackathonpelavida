@@ -6,12 +6,12 @@ $(document).ready(function () {
         $('.input-error').removeClass('input-error');
 
         requestApi(
-            'Usuario/login',
+            'http://localhost/hackathonpelavida/front/public/Login/logar',
             function (res) {
                 redirect('Usuario');
             },
             dados,
-            function name(rej) {
+            function (rej) {
                 $('.custom-input').addClass('input-error');
             }
         );

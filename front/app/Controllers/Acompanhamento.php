@@ -8,6 +8,6 @@ class Acompanhamento extends BaseController
             "assets/js/cadastro/acompanhameto.js"
 		);
 		
-		$this->template('cadastros/acompanhamento', array('js' => $js));
+		return $this->template('cadastros/Acompanhamento', array('js' => $js));
 	}
 }

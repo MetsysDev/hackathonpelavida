@@ -9,6 +9,6 @@ class Empresa extends BaseController
             "assets/js/cadastro/empresa.js"
 		);
 
-		$this->template('cadastros/empresa', array('js' => $js));
+		return $this->template('cadastros/Empresa', array('js' => $js));
 	}
 }

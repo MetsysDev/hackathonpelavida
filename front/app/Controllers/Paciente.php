@@ -8,6 +8,6 @@ class Paciente extends BaseController
             "assets/js/cadastro/paciente.js"
 		);
 
-		$this->template('cadastros/paciente', array('js' => $js));
+		return $this->template('cadastros/Paciente', array('js' => $js));
 	}
 }

@@ -8,6 +8,6 @@ class Unidadesaude extends BaseController
             "assets/js/cadastro/unidadeSaude.js"
 		);
 
-		$this->template('cadastros/unidadesaude', array('js' => $js));
+		return $this->template('cadastros/Unidadesaude', array('js' => $js));
 	}
 }
